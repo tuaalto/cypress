@@ -28,7 +28,7 @@ describe('makaronilaatikko', () => {
     cy.contains('Hae').click()
     cy.get('[type="radio"]').check('pasta')
     cy.get('form').find('[name="mainIngredients[mixedmeat]"]').check()
-    cy.get('[data-search-element="recipe-item"]').first().click()
+    cy.get('[data-search-element="recipe-item"]').eq(1).click()
     cy.get('[data-view-element="add-ingredients"]').click()
     cy.get('#shoppinglist-handle').click()
 
