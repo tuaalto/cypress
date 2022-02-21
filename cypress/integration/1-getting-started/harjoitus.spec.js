@@ -46,32 +46,3 @@ describe('Makaronilaatikko Cypressilta Robotille', () => {
       cy.writeFile('cypress/fixtures/test1.txt', '\n', { flag: 'a+' })})
   })
 })
-
-
-
-
-
-
-  // Test Shopping list
-  // [Documentation]    Items in shopping list
-  // [tags]      almamedia
-  // Appstate    Almamedia
-  // RunKeywordAndIgnoreError    ClickText   Hyväksy  timeout=5
-  // ClickText   Palvelut
-  // ClickText   Tuotteet ja palvelut
-  // ClickText   Kotikokki.net
-  // SwitchWindow  NEW
-  // RunKeywordAndIgnoreError    ClickText   Salli sijainti  timeout=3
-  // TypeText    Resepti tai raaka-aineen nimi...     makaroonilaatikko
-  // ClickText   Hae
-  // ClickText   Pastat ja nuudelit
-  // ClickCheckbox   Makkara ja jauheliha  on
-  // VerifyNoText    Hakuehdoillasi löytyi 0 reseptiä
-  // ClickItem   Makaroonilaatikko
-  // ClickText  Ostoslistalle
-  // ClickItem  /ostoslista/
-  // UseList            //*[@class\="ingredient-name"]
-  // ${LIST}         GetList
-  // FOR    ${item}    IN    @{LIST}
-  //     LogToConsole    ${item}
-  // END
