@@ -4,4 +4,5 @@ Library             OperatingSystem
 *** Test Cases ***
 
 Log Casserole Recipe
-    Get File    ${PATH}
+    ${receipt}    Get File    ${PATH}
+    Log    ${receipt}

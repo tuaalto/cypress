@@ -39,7 +39,7 @@ describe('Makaronilaatikko Cypressilta Robotille', () => {
     cy.get('[data-view-element="add-ingredients"]').click()
     cy.get('#shoppinglist-handle').click()
 
-    const now = new Date().getTime()
+    const now = new Date()
     cy.writeFile('cypress/fixtures/test.txt', 'timestamp=' + now + '\nMakaroonilaatikon Raaka-aineet:\n')
     cy.get('[data-shoppinglist-element="ingredient-name"]').each(($ingr) => {
       const ingredient = $ingr.text().replace(/[\r\n]/g, '').trim()
