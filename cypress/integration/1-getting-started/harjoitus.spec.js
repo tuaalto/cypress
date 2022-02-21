@@ -23,6 +23,7 @@ describe('Makaronilaatikko Cypressilta Robotille', () => {
   })
   it.only('navigoi kotikokki.net sivulla', () => {
     cy.visit('https://www.kotikokki.net/')
+    cy.wait(2000)
     cy.get('body').then((body) => {
       if (body.find('#almacmp-modalConfirmBtn').length > 0) {
           cy.get('#almacmp-modalConfirmBtn').click()
