@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('makaronilaatikko', () => {
+describe('Makaronilaatikko Cypressilta Robotille', () => {
   beforeEach(() => {
     cy.viewport(1920, 1080)
   })
@@ -38,7 +38,8 @@ describe('makaronilaatikko', () => {
     cy.get('[data-view-element="add-ingredients"]').click()
     cy.get('#shoppinglist-handle').click()
 
-    cy.writeFile('cypress/fixtures/test1.txt', 'Makaroonilaatikon Raaka-aineet:\n')
+    const now = new Date().getTime()
+    cy.writeFile('cypress/fixtures/test1.txt', 'timestamp=' + now + '\nMakaroonilaatikon Raaka-aineet:\n')
     cy.get('[data-shoppinglist-element="ingredient-name"]').each(($ingr) => {
       const ingredient = $ingr.text().replace(/[\r\n]/g, '').trim()
       cy.writeFile('cypress/fixtures/test1.txt', ingredient.replaceAll(/\s+/g, ' '), { flag: 'a+' })
