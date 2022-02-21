@@ -7,7 +7,7 @@ describe('makaronilaatikko', () => {
   })
   it('navigoi almamedian sivulla', () => {
     cy.visit('https://www.almamedia.fi/')
-    cy.on('window:confirm', () => true);
+    cy.on('#almacmp-modalConfirmBtn', () => true);
     cy.contains('Palvelut').click()
     cy.contains('Tuotteet ja palvelut').click()
     cy.get('img[alt="Kotikokki_logo_370x370"]').scrollIntoView()
@@ -15,8 +15,7 @@ describe('makaronilaatikko', () => {
   })
   it('navigoi kotikokki.net sivulla', () => {
     cy.visit('https://www.kotikokki.net/')
-    cy.wait(2000)
-    cy.on('window:confirm', () => true);
+    cy.on('#almacmp-modalConfirmBtn', () => true);
     cy.get('#recipe-search-free-text').type(`makaronilaatikko`)
     cy.contains('Hae').click()
     cy.get('[type="radio"]').check('pasta')
