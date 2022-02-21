@@ -21,7 +21,7 @@ describe('makaronilaatikko', () => {
 
 
   })
-  it('navigoi kotikokki.net sivulla', () => {
+  it.only('navigoi kotikokki.net sivulla', () => {
     cy.visit('https://www.kotikokki.net/')
     cy.get('body').then((body) => {
       if (body.find('#almacmp-modalConfirmBtn').length > 0) {
@@ -33,7 +33,8 @@ describe('makaronilaatikko', () => {
     cy.get('[type="radio"]').check('pasta')
     cy.get('form').find('[name="mainIngredients[mixedmeat]"]').check()
     cy.wait(2000)
-    cy.get('[data-search-element="recipe-item"]').eq(1).click({force: true})
+    const link = cy.get('[data-search-element="recipe-item"]').first()
+    link.click()
     cy.get('[data-view-element="add-ingredients"]').click()
     cy.get('#shoppinglist-handle').click()
 
