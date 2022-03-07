@@ -45,5 +45,6 @@ describe('Makaronilaatikko Cypressilta Robotille', () => {
       const ingredient = $ingr.text().replace(/[\r\n]/g, '').trim()
       cy.writeFile('cypress/fixtures/test.txt', ingredient.replaceAll(/\s+/g, ' '), { flag: 'a+' })
       cy.writeFile('cypress/fixtures/test.txt', '\n', { flag: 'a+' })})
+    Cypress.env('HOST') // 'laura.dev.local'
   })
 })
