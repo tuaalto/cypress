@@ -38,13 +38,12 @@ describe('Makaronilaatikko Cypressilta Robotille', () => {
     link.click()
     cy.get('[data-view-element="add-ingredients"]').click()
     cy.get('#shoppinglist-handle').click()
-
+    Cypress.env('HOST') // 'laura.dev.local'
     const now = new Date()
     cy.writeFile('cypress/fixtures/test.txt', 'timestamp=' + now + '\nMakaroonilaatikon Raaka-aineet:\n')
     cy.get('[data-shoppinglist-element="ingredient-name"]').each(($ingr) => {
       const ingredient = $ingr.text().replace(/[\r\n]/g, '').trim()
       cy.writeFile('cypress/fixtures/test.txt', ingredient.replaceAll(/\s+/g, ' '), { flag: 'a+' })
       cy.writeFile('cypress/fixtures/test.txt', '\n', { flag: 'a+' })})
-    Cypress.env('HOST') // 'laura.dev.local'
   })
 })
